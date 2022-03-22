@@ -14,7 +14,7 @@ Steps to run the application.
 2)copy all the codes and make sure to save it in the same hierarchy as:
   *) create a new folder. Name of your choice.
   *) save the main file in this folder.
-  *) create 2 new folders -> static and -> template
+  *) create 2 new folders -> static/images and -> template
   *) save all the html files in templates folder
   *) place all the images in the static folder
 3)open the project folder in visual studio.
