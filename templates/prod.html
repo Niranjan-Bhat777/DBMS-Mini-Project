@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+        
+        PRODUCTS DATABASE
+{% endblock title %}
+
+{% block body %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">P_ID</th>
+        <th scope="col">P_NAME</th>
+        <th scope="col">QUANTITY</th>
+        <th scope="col">PRICE</th>
+        <th scope="col">EMP_ID</th>
+        <th scope="col">SUP_ID</th>
+        <th scope="col">TIME</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for post in query %}
+      <tr>
+        <th scope="row">{{post.p_id}}</th>
+        <td>{{post.p_name}}</td>
+        <td>{{post.quantity}}</td>
+        <td>{{post.price}}</td>
+        <td>{{post.emp_id}}</td>
+        <td>{{post.sup_id}}</td>
+        <td>{{post.time}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock body %}

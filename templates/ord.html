@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+        
+        ORDER DATABASE
+{% endblock title %}
+
+{% block body %}
+
+
+
+{% with messages=get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+<div class="alert alert-{{category}} alert-dismissible fade show"
+role="alert">
+    {{message}}
+
+  
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ORDER_ID</th>
+        <th scope="col">ITEM_ID</th>
+        <th scope="col">S_NO</th>
+        <th scope="col">QUANTITY</th>
+        <th scope="col">PRICE</th>
+        <th scope="col">TIME</th>
+        <th scope="col">EDIT</th>
+        <th scope="col">DELETE</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for post in query %}
+      <tr>
+        <th scope="row">{{post.order_id}}</th>
+        <td>{{post.item_id}}</td>
+        <td>{{post.s_no}}</td>
+        <td>{{post.quantity}}</td>
+        <td>{{post.price}}</td>
+        <td>{{post.time}}</td>
+        <td><a href="/edit/ord/{{post.order_id}}"><button class="btn btn-primary"> Edit </button></a> </td>
+        <td><a href="/delete/ord/{{post.order_id}}"><button onclick="return confirm('Are you sure to delete data');" class="btn btn-danger">Delete</button></a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock body %}

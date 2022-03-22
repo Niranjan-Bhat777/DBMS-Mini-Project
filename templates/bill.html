@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+        
+        BILL
+{% endblock title %}
+        
+
+{% block body %}
+
+
+
+<div class="container mt-5">
+    <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">S_NO</th>
+                <th scope="col">ITEM_ID</th>
+                <th scope="col">ITEM_NAME</th>
+                <th scope="col">PRICE</th>
+                <th scope="col">QUANTITY</th>
+                <th scope="col">TOTAL PRICE</th>
+            </thead>
+            <tbody>
+            {% for post in query1 %}
+              <tr>
+                <th scope="row">{{post.s_no}}</th>
+                <td>{{post.item_id}}</td>
+                <td>{{post.name}}</td>
+                <td>{{post.price}}</td>
+                <td>{{post.quantity}}</td>
+                <td>{{post.tprice}}</td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+          <h3> The total amount is {{price}} rupees</h3>
+
+         
+
+
+
+
+    </div>
+    <div class="col-md-2"></div>
+<br>
+<br>
+<br>
+
+
+
+{% endblock body %}

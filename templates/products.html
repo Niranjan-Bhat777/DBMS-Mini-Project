@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+        
+        NEW PRODUCT
+{% endblock title %}
+        
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+
+<form action="/" method="post" >
+
+    <div class = "form-group">
+        <h5>Product Name</h5>
+        <input type = "text" class="form-control" id="p_name" name="p_name" placeholder="Product Name" required>
+
+    </div>
+
+    <br>
+
+
+    <div class = "form-group">
+        <h5>Quantity</h5>
+        <input type = "integer" class="form-control" id="quantity" name="quantity" placeholder="Quantity" required>
+
+    </div>
+
+    <br>
+
+    <div class = "form-group">
+        <h5>Price</h5>
+        <input type = "float" class="form-control" id="price" name="price" placeholder="Price" required>
+
+    </div>
+
+    <br>
+
+
+    <div class = "form-group">
+        <h5>Employee ID</h5>
+        <select class="form-control" id="emp_id" name="emp_id" required>
+            <option selected>Employee_ID</option>
+            <option value="E001">E001</option>
+            <option value="E002">E002</option>
+            <option value="E003">E003</option>
+            <option value="E004">E004</option>
+            <option value="E005">E005</option>
+            <option value="E006">E006</option>
+        </select>
+    </div>
+
+    <br>
+    <div class = "form-group">
+        <h5>Supplier ID</h5>
+        <select class="form-control" id="sup_id" name="sup_id" required>
+            <option selected>Supplier_ID</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-success btn-sm btn-block">Submit</button>
+    <a class="btn btn-primary" href="/" role="button">Back</a>
+
+</form>
+</div>
+
+
+
+
+<div class="col-md-4"></div>
+
+
+
+
+</div>
+
+
+{% endblock body %}

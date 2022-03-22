@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+        
+        EDIT ORDERS
+{% endblock title %}
+        
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+
+        <form action="/edit/ord/{{posts.order_id}}" method="post" >
+                <div class = "form-group">
+                        <h5>S_No</h5>
+                        <input type = "integer" class="form-control" id="s_no" name="s_no" placeholder="s_no" value="{{posts.s_no}}" required>
+                
+                    </div>
+
+                <div class = "form-group">
+                        <h5>Item_ID</h5>
+                        <select class="form-control" id="item_id" name="item_id" required>
+                                        <option selected>{{posts.item_id}}</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                        </select>
+                </div>
+                        
+
+                <br>
+                <div class = "form-group">
+                        <h5>Quantity</h5>
+                        <input type = "integer" class="form-control" id="quantity" name="quantity" placeholder="Quantity" value="{{posts.quantity}}"  required>
+                                        
+                </div>
+                <br>
+                <button type="submit" class="btn btn-success btn-sm btn-block">Update</button>
+
+
+        </div>
+
+{% endblock body %}

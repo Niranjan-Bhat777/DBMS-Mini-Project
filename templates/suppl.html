@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+        
+        SUPPLY
+{% endblock title %}
+
+{% block body %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">SUP_ID</th>
+        <th scope="col">NAME</th>
+        <th scope="col">ADDRESS</th>
+        <th scope="col">PHONE</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+    {% for post in query %}
+      <tr>
+        <th scope="row">{{post.sup_id}}</th>
+        <td>{{post.name}}</td>
+        <td>{{post.address}}</td>
+        <td>{{post.phone}}</td>
+        
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock body %}

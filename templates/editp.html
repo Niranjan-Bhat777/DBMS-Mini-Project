@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+        
+        EDIT PAYMENTS
+{% endblock title %}
+        
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+            <form action="/edit/paym/{{posts.payment_id}}" method="post" >
+                    <div class = "form-group">
+                            <h5>Price</h5>
+                            <input type = "float" class="form-control" id="price" name="price" placeholder="price" value="{{posts.price}}" required>
+                    
+                        </div>
+<br>
+
+                        <div class = "form-group">
+                            <h5>Payment Mode</h5>
+                            <select class="form-control" id="payment_mode" name="payment_mode" required>
+                                            <option selected>{{posts.payment_mode}}</option>
+                                            <option value="cash">cash</option>
+                                            <option value="UPI">UPI</option>
+                                            <option value="Debit/Credit card">Debit/Credit card</option>
+                            </select>
+                            </div>
+
+                            <br>
+                            <div class = "form-group"><br>
+                                <h5>S_No</h5>
+                                <input type = "integer" class="form-control" id="s_no" name="s_no" placeholder="s_no" value="{{posts.s_no}}" required>
+                            </div>
+                            <br>
+
+                            <div class = "form-group">
+                                <h5>Employee ID</h5>
+                                <select class="form-control" id="emp_id" name="emp_id" required>
+                                    <option selected>{{posts.emp_id}}</option>
+                                    <option value="E001">E001</option>
+                                    <option value="E002">E002</option>
+                                    <option value="E003">E003</option>
+                                    <option value="E004">E004</option>
+                                    <option value="E005">E005</option>
+                                    <option value="E006">E006</option>
+                                </select>
+                            </div>
+                            <br>
+                            <button type="submit" class="btn btn-success btn-sm btn-block">update</button>
+
+    </div>
+    
+<div class="col-md-4"></div>
+
+
+
+{% endblock body %}

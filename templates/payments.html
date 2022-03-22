@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+        
+        PAYMENT
+{% endblock title %}
+        
+
+{% block body %}
+
+<div class="container mt-5">
+        <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+                <form action="/bill" method="post" >
+                        <div class = "form-group">
+                                <h5>Price</h5>
+                                <input type = "float" class="form-control" id="price" name="price" placeholder="price" value="{{query2}}" required>
+                        
+                            </div>
+<br>
+
+                            <div class = "form-group">
+                                <h5>Payment_mode</h5>
+                                <select class="form-control" id="payment_mode" name="payment_mode" !required>
+                                                <option selected>Payment_mode</option>
+                                                <option value="cash">Cash</option>
+                                                <option value="UPI">UPI</option>
+                                                <option value="Debit/Credit card">Debit/Credit card</option>
+                                </select>
+                                </div>
+                                <br>
+                                <div class = "form-group">
+                                        <h5>S_No</h5>
+                                        <input type = "integer" class="form-control" id="s_no" name="s_no" placeholder="s_no" value="{{query3}}" required>
+                                                
+                                </div>
+                                <br>
+
+                                <div class = "form-group">
+                                        <h5>Employee_ID</h5>
+                                        <select class="form-control" id="emp_id" name="emp_id" required>
+                                                            <option selected>Employee_ID</option>
+                                                            <option value="E001">E001</option>
+                                                            <option value="E002">E002</option>
+                                                            <option value="E003">E003</option>
+                                                            <option value="E004">E004</option>
+                                                            <option value="E005">E005</option>
+                                                            <option value="E006">E006</option>
+                                                        </select>
+                                                    </div>
+
+                                <br>
+                                <button type="submit" class="btn btn-success btn-sm btn-block">Order</button>
+
+        </div>
+        
+<div class="col-md-4"></div>
+
+
+
+{% endblock body %}

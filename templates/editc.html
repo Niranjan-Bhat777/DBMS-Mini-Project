@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+        
+        EDIT CUSTOMER
+{% endblock title %}
+        
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <form action="/edit/{{posts.s_no}}" method="post" >
+
+        <div class = "form-group">
+            <h5>Name</h5>
+            <input type = "text" class="form-control" id="name" name="name" placeholder="Name" value="{{posts.name}}" required>
+    
+        </div>
+    
+        <br>
+    
+    
+        <div class = "form-group">
+            <h5>phone</h5>
+            <input type = "text" class="form-control" id="phone" name="phone" placeholder="Phone" value="{{posts.phone}}" required>
+    
+        </div>
+    
+        <br>
+    
+        <div class = "form-group">
+            <h5>address</h5>
+            <input type = "text" class="form-control" id="address" name="address" placeholder="address" value="{{posts.address}}" required>
+    
+        </div>
+    
+        <br>
+
+        <button type="submit" class="btn btn-success btn-sm btn-block">update</button>
+</form>
+
+
+
+
+    </div>
+    <div class="col-md-4"></div>
+
+    
+    
+    </div>
+
+
+
+
+
+
+{% endblock body %}

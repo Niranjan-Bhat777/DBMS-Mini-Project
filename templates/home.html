@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}
+        HOME        
+{% endblock title %}
+
+
+{% block body %}
+<div>
+{% with messages=get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+<div class="alert alert-{{category}} alert-dismissible fade show"
+role="alert">
+    {{message}}
+
+  
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+</div>
+<div class="container mt-5">
+<div class="col-md-5" style="top: 125px; position: relative; left: 620px;">
+        <div class="card" style="width: 18rem;">
+                <img src="static/images/a.jpg" class="card-img-top" alt="..." style=" width: 200px; position: relative; left: 40px;
+                top: 10px; height: 200px;">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Products</h5>
+                  <p class="card-text text-center">Insert into product Database</p>
+                  <a href="/products" class="btn btn-primary" style=" display: flex;align-items: center; justify-content: center;">Products</a>
+                </div>
+              </div>
+
+
+
+</div>
+<div class="col-md-5">
+        <div class="card" style="width: 18rem;position: relative;top: -219px;left: 311px;">
+                <img src="static/images/b.jpg" class="card-img-top" alt="..." style=" width: 200px; position: relative; left: 40px;
+                top: 10px; height: 200px;">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Order</h5>
+                  <p class="card-text text-center"> Take a new order</p>
+                  <a href="/orders" class="btn btn-primary" style=" display: flex;align-items: center; justify-content: center;">Order</a>
+                </div>
+              </div>
+</div>
+</div>
+
+{% endblock body %}

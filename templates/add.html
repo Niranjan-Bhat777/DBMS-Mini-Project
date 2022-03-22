@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+        
+        CONFIRM
+{% endblock title %}
+        
+
+{% block body %}
+<div>
+    {% with messages=get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{category}} alert-dismissible fade show"
+    role="alert">
+        {{message}}
+    
+      
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                  Add more items
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Add more ice-creams to the order</h5>
+                  <p class="card-text"></p>
+                  <a href="/item" class="btn btn-primary">Add</a>
+                </div>
+              </div>
+
+
+
+
+        </div>
+
+
+
+
+        <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                      Finish
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Confirm your order and proceed to payment page</h5>
+                      <p class="card-text"></p>
+                      <a href="/payments" class="btn btn-primary">Confirm</a>
+                    </div>
+                  </div>
+
+        </div>
+
+
+{% endblock body %}

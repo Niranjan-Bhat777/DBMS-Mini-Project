@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+        
+        CUSTOMER
+{% endblock title %}
+
+{% block body %}
+{% with messages=get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+<div class="alert alert-{{category}} alert-dismissible fade show"
+role="alert">
+    {{message}}
+
+  
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">S_NO</th>
+        <th scope="col">NAME</th>
+        <th scope="col">PHONE</th>
+        <th scope="col">ADDRESS</th>
+        <th scope="col">EDIT</th>
+        <th scope="col">DELETE</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for post in query %}
+      <tr>
+        <th scope="row">{{post.s_no}}</th>
+        <td>{{post.name}}</td>
+        <td>{{post.phone}}</td>
+        <td>{{post.address}}</td>
+        <td><a href="/edit/{{post.s_no}}"><button class="btn btn-primary"> Edit </button></a> </td>
+        <td><a href="delete/{{post.s_no}}"><button onclick="return confirm('Are you sure to delete data');" class="btn btn-danger">Delete</button></a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock body %}
